@@ -1,0 +1,5 @@
+{
+  "name": "M3U8 FFmpeg Downloader",
+  "description": "An application to generate FFmpeg commands for downloading encrypted M3U8 HLS video streams. It provides both a simple, direct command and a more advanced, manual method for streams that require local key files.",
+  "requestFramePermissions": []
+}
