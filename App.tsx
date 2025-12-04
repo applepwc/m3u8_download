@@ -10,7 +10,7 @@ const App: React.FC = () => {
     const [ivHex, setIvHex] = useState<string>("b3e628391049c4b689027bdb41dbf0");
     const [outputFilename, setOutputFilename] = useState<string>("video.mp4");
 
-    const simpleCommand = `ffmpeg -i "${m3u8Url}" -c copy "${outputFilename}"`;
+    const simpleCommand = `ffmpeg -http_persistent 0 -i "${m3u8Url}" -c copy "${outputFilename}"`;
     const advancedKeyLine = `#EXT-X-KEY:METHOD=AES-128,URI="video.key",IV=0x${ivHex}`;
     const advancedCommand = `ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -allowed_extensions ALL -i playlist.m3u8 -c copy "${outputFilename}"`;
 
